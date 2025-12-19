@@ -1,0 +1,60 @@
+// Temporary file to hold modal code
+{/* Christmas Modal */}
+{showChristmasModal && (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fadeIn">
+    {/* Overlay */}
+    <div 
+      className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+      onClick={() => setShowChristmasModal(false)}
+    />
+    
+    {/* Modal Content */}
+    <div className="relative bg-[#c6b284] border-8 border-[#5e4b35] p-6 max-w-2xl w-full shadow-2xl animate-scaleIn">
+      {/* Close Button */}
+      <button
+        onClick={() => setShowChristmasModal(false)}
+        className="absolute top-4 right-4 w-8 h-8 bg-red-600 hover:bg-red-500 text-white mc-font text-xs border-2 border-red-800 flex items-center justify-center transition-colors"
+      >
+        ✕
+      </button>
+      
+      <div className="bg-[#fcf3d1] p-8 text-center space-y-6">
+        {/* Title */}
+        <h2 className="mc-font text-2xl text-[#5e4b35] mb-4 animate-bounce">
+          🎄 圣诞快乐！ 🎄
+        </h2>
+        
+        {/* Steve Christmas Image */}
+        <div className="relative border-4 border-[#5e4b35] shadow-xl bg-white overflow-hidden">
+          <img 
+            src="/images/steve-christmas.jpg" 
+            alt="Steve的圣诞祝福"
+            className="w-full h-auto"
+            onError={(e) => { 
+              e.currentTarget.src = 'https://via.placeholder.com/600x400/8b4513/ffffff?text=Steve+Merry+Christmas!+%F0%9F%8E%85%F0%9F%8E%84'; 
+            }}
+          />
+        </div>
+        
+        {/* Message */}
+        <div className="bg-[#e8d7c3] border-2 border-[#5e4b35] p-4">
+          <p className="font-serif text-[#3e2b15] text-lg leading-relaxed italic">
+            "嘿！我是史蒂夫。<br/>
+            在这个方块化的圣诞节，<br/>
+            愿你的世界充满欢乐，<br/>
+            背包永远装满礼物！<br/>
+            🎁 Merry Blockmas! 🎁"
+          </p>
+        </div>
+        
+        {/* Action Button */}
+        <Button 
+          onClick={() => setShowChristmasModal(false)}
+          className="mx-auto"
+        >
+          🎅 收下祝福
+        </Button>
+      </div>
+    </div>
+  </div>
+)}
